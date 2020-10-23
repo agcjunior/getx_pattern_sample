@@ -6,5 +6,5 @@ final ThemeData appThemeData = ThemeData(
     brightness: Brightness.light,
     accentColor: Colors.cyan[600],
     appBarTheme: AppBarTheme(
-      color: Colors.blue,
+      color: Colors.cyan,
     ));
