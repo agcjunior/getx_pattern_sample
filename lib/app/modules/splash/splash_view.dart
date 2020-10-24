@@ -11,7 +11,7 @@ class SplashView extends GetView<SplashController> {
       body: Stack(
         children: [
           SplashScreen(
-            seconds: 5,
+            seconds: 1,
             gradientBackground: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,

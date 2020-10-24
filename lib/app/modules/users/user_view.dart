@@ -3,18 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_modelo/app/modules/users/user_controller.dart';
 
-
 class UserView extends GetView<UserController> {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-    appBar: AppBar(title: Text('Users')),
-
-    body: Container(
-      child: Text("Users"),
-    ),
+      appBar: AppBar(title: Text('Users')),
+      body: SafeArea(
+        child: GetX<UserController>(
+          builder: (_) {
+            return ListView.builder(
+              itemCount: _.users.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  child: Text(_.users[index].name),
+                );
+              },
+            );
+          },
+        ),
+      ),
     );
   }
 }

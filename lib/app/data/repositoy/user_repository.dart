@@ -8,8 +8,7 @@ class UserRepository {
 
   UserRepository({@required this.apiClient}) : assert(apiClient != null);
 
-  Future<User> getUserById(id) async {
-    return User.fromJson(await apiClient.getUser(id));
+  Future<List<User>> getUserList() async {
+    return await apiClient.getUsers();    
   }
-
 }

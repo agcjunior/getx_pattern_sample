@@ -1,14 +1,17 @@
 import 'dart:convert';
+import 'package:getx_modelo/app/data/base_url.dart';
+import 'package:getx_modelo/app/data/model/user.dart';
 import 'package:http/http.dart' as http;
 
 class UserProvider {
-  final httpClient = new http.Client();
-
-  Future<Map<String, dynamic>> getUser(id) async {
-    var response = await  http.get("https://jsonplaceholder.typicode.com/users/$id");
+    
+  Future<List<User>> getUsers() async {    
+    
+    var response = await http.get(BASE_URL+"users");    
 
     if (response.statusCode == 200) {
-      return json.decode(response.body);
+      Iterable users = jsonDecode(response.body);           
+      return users.map((user) => User.fromJson(user)).toList();
     } else {
       print("erro -get" + response.body);
     }
