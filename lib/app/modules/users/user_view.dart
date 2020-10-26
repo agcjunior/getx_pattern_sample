@@ -13,7 +13,10 @@ class UserView extends GetView<UserController> {
             leading: Icon(Icons.account_circle),
             title: Text(user.name),
             subtitle: Text(user.email),
-            tileColor: Colors.grey[200],            
+            tileColor: Colors.grey[200],
+            onTap: () {
+              Get.toNamed('/userDetails', arguments: user);
+            },            
           ),
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:get/route_manager.dart';
 import 'package:getx_modelo/app/modules/splash/splash_binding.dart';
 import 'package:getx_modelo/app/modules/splash/splash_view.dart';
 import 'package:getx_modelo/app/modules/users/user_binding.dart';
+import 'package:getx_modelo/app/modules/users/user_details_view.dart';
 import 'package:getx_modelo/app/modules/users/user_view.dart';
 import 'package:getx_modelo/app/routes/app_routes.dart';
 
@@ -19,5 +20,9 @@ class AppPages {
       page: () => UserView(),
       binding: UserBinding(),
     ),
+    GetPage(
+      name: "/userDetails/:user",
+      page: () => UserDetailsView()     
+    )
   ];
 }

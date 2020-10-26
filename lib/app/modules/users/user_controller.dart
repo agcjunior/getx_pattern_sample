@@ -9,7 +9,10 @@ class UserController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-    users.value = await UserRepository(apiClient: UserProvider()).getUserList();
-    
+    users.value = await UserRepository(apiClient: UserProvider()).getUserList();    
+  }
+
+  User getUserDetails(int index) {
+    return users[index];
   }
 }
