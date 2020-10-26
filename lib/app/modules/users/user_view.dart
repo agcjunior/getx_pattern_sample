@@ -5,6 +5,7 @@ import 'package:getx_modelo/app/data/model/user.dart';
 import 'package:getx_modelo/app/modules/users/user_controller.dart';
 
 class UserView extends GetView<UserController> {
+  
   Widget _buildCard(User user) {
     return Card(
       child: Column(
@@ -14,8 +15,8 @@ class UserView extends GetView<UserController> {
             title: Text(user.name),
             subtitle: Text(user.email),
             tileColor: Colors.grey[200],
-            onTap: () {
-              Get.toNamed('/userDetails', arguments: user);
+            onTap: () {                            
+              Get.toNamed('/userDetails/', arguments: user);
             },            
           ),
         ],

@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:getx_modelo/app/data/model/user.dart';
 
 class UserDetailsView extends GetView {
-  final User user = Get.parameters as User;
+  final User user = Get.arguments as User;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,9 +12,14 @@ class UserDetailsView extends GetView {
         title: Text(user.name),
       ),
       body: Container(
-          child: Center(
-        child: Text(user.address.street),
-      )),
+        child: Column(
+          children: [
+            Text(user.address.street),
+            Text(user.address.city),
+            Text(user.address.zipcode)
+          ],
+        ),
+      ),
     );
   }
 }
